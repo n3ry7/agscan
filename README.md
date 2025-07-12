@@ -130,7 +130,6 @@ Para um conjunto pequeno de imagens:
 
 | Causa | Solução |
 |-------|---------|
-| Modelo muito complexo | - Redução de camadas<br>- Regularização (Dropout, Weight Decay) |
 | Pouca variabilidade | - Data augmentation<br>- Coleta de mais imagens |
 | Treino excessivo | Early stopping |
 | Teste enviesado | Verificação da representatividade das imagens de teste |
@@ -176,7 +175,7 @@ python rtdetr_pytorch/tools/train.py -c rtdetr_pytorch/configs/rtdetr/rtdetr_r50
 ```bash
 python rtdetr_pytorch/tools/infer_agscan.py \
   --input-dir ds_terrestres \
-  --output-dir agscan/ds_terrestres_results \
+  --output-dir overfit_results \
   -c rtdetr_pytorch/configs/rtdetr/rtdetr_r50vd_6x_agscan.yml \
   -r rtdetr_pytorch/output/rtdetr_r50vd_6x_agscan/rtdetr_agscan_overfit.pth
 ```
@@ -184,7 +183,7 @@ python rtdetr_pytorch/tools/infer_agscan.py \
 ### Classificação de Maturação
 ```bash
 python maturity_classifier.py \
-  --input-dir ds_terrestres_results/class_1 \
+  --input-dir overfit_results/class_1 \
   --output-dir maturity_classes \
   --model-path maturity_classifier.pkl
 ```
@@ -193,11 +192,13 @@ python maturity_classifier.py \
 
 Exemplos de saída do RT-DETR após overfit controlado:
 
-![Exemplo de detecção 1](imgs/overfit_results/9d78362a-73684031.jpg)  
+![Exemplo de detecção 1](/home/nery/agscan/overfit_results/9d78362a-73684031.jpg)  
 *Figura 1: Resultado em imagem de treino - laranja*
 
-![Exemplo de detecção 2](imgs/overfit_results/657b2471-79103427.jpg)  
+![Exemplo de detecção 2](/home/nery/agscan/overfit_results/657b2471-79103427.jpg)  
 *Figura 2: Resultado em imagem de treino - café*
+
+Outros resultados podem ser vistos em *./overfit_results*.
 
 ## Código Principal (Snippets)
 

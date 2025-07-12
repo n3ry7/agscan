@@ -12,8 +12,8 @@ from tqdm import tqdm
 import joblib
 
 # Configuration
-VALIDATION_DIR = Path("/home/nery/desafio_agscan/validation_images")
-MODEL_PATH = Path("/home/nery/desafio_agscan/maturity_classifier.pkl")
+VALIDATION_DIR = Path("validation_images")
+MODEL_PATH = Path("maturity_classifier.pkl")
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Since we don't have labels, we'll assume the order is:
