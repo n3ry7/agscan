@@ -192,10 +192,10 @@ python maturity_classifier.py \
 
 Exemplos de saída do RT-DETR após overfit controlado:
 
-![Exemplo de detecção 1](/home/nery/agscan/overfit_results/9d78362a-73684031.jpg)  
+![Exemplo de detecção 1](overfit_results/9d78362a-73684031.jpg)  
 *Figura 1: Resultado em imagem de treino - laranja*
 
-![Exemplo de detecção 2](/home/nery/agscan/overfit_results/657b2471-79103427.jpg)  
+![Exemplo de detecção 2](overfit_results/657b2471-79103427.jpg)  
 *Figura 2: Resultado em imagem de treino - café*
 
 Outros resultados podem ser vistos em *./overfit_results*.
